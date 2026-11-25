@@ -47,5 +47,5 @@ def monthly_balance(transactions, year, month):
     balance = Decimal("0")
     for tx_date, tx_type, amount in parsed:
         if tx_date.year == year and tx_date.month == month:
-            balance += amount if tx_type == INCOME else amount
+            balance += amount if tx_type == INCOME else -amount
     return float(round(balance, 2))
